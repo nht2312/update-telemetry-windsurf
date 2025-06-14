@@ -3,7 +3,7 @@ try {
     $ErrorActionPreference = "Stop"
     
     # Define file paths
-    $file = "C:\Users\DevNHT Asus\AppData\Roaming\Windsurf\User\globalStorage\storage.json"
+    $file = "C:\Users\DevNHT_ROG\AppData\Roaming\Windsurf\User\globalStorage\storage.json"
     $tmp = "$file.tmp"
     
     # Check if file exists
@@ -24,7 +24,7 @@ try {
     
     # Replace telemetry fields in the JSON - fixing the replacement syntax
     $json = $json -replace '"telemetry\.machineId"\s*:\s*"[^"]+"', ('"telemetry.machineId": "' + $machineId + '"')
-    $json = $json -replace '"telemetry\.sqmId"\s*:\s*"[^"]+"', ('"telemetry.sqmId": "{' + $sqmId + '}"')
+    $json = $json -replace '"telemetry\.sqmId"\s*:\s*"[^"]+"', ('"telemetry.sqmId": "' + $sqmId + '"')
     $json = $json -replace '"telemetry\.devDeviceId"\s*:\s*"[^"]+"', ('"telemetry.devDeviceId": "' + $deviceId + '"')
     
     # Write the modified JSON to a temporary file
@@ -35,7 +35,7 @@ try {
         Move-Item -Path $tmp -Destination $file -Force
         Write-Host "`nTelemetry updated successfully!" -ForegroundColor Green
         Write-Host "machineId : $machineId"
-        Write-Host "sqmId     : {$sqmId}"
+        Write-Host "sqmId     : $sqmId"
         Write-Host "deviceId  : $deviceId"
     } else {
         throw "Failed to create temporary file."
