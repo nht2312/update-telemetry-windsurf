@@ -23,6 +23,31 @@ function install_windsurf() {
   sudo apt update
   sudo apt install -y windsurf
 
+  echo "✨ Installing extension IDE ..."
+
+  windsurf --install-extension arifbudimanar.arifcode-theme
+  windsurf --install-extension phil294.git-log--graph
+  windsurf --install-extension laravel.vscode-laravel
+  windsurf --install-extension shufo.vscode-blade-formatter
+  windsurf --install-extension onecentlin.laravel-blade
+  windsurf --install-extension amiralizadeh9480.laravel-extra-intellisense
+  windsurf --install-extension mrchetan.goto-laravel-components
+  windsurf --install-extension mrchetan.laravel-goto-config
+  windsurf --install-extension codingyu.laravel-goto-view
+  windsurf --install-extension porifa.laravel-intelephense
+  windsurf --install-extension open-southeners.laravel-pint
+  windsurf --install-extension mohamedbenhida.laravel-intellisense
+  windsurf --install-extension onecentlin.laravel5-snippets
+  windsurf --install-extension naoray.laravel-goto-components
+  windsurf --install-extension stef-k.laravel-goto-controller
+  windsurf --install-extension doonfrs.livewire-support
+  windsurf --install-extension xyz.local-history
+  windsurf --install-extension pkief.material-icon-theme
+  windsurf --install-extension bradlc.vscode-tailwindcss
+  windsurf --install-extension imgildev.vscode-tailwindcss-snippets
+  windsurf --install-extension wayou.vscode-todo-highlight
+  windsurf --install-extension bmewburn.vscode-intelephense-client
+
   echo "✅ WindSurf IDE installed successfully!"
 }
 
